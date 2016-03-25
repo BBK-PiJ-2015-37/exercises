@@ -2,10 +2,11 @@ package day19;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Class created to contact static method required for Ex2 - Ex5.
+ * Class created to contact static method required for Ex2 - Ex5 and Ex7
  */
 public class StringUtils {
 
@@ -73,6 +74,23 @@ public class StringUtils {
             if (function.test(possibleMatch)) {
                 result.add(possibleMatch);
             }
+        }
+        return result;
+    }
+
+    /**
+     * A method that takes a list of strings, applies a function to each element of the list,
+     * and returns a new list with the resultant strings
+     *
+     * @param words a list of strings
+     * @param function the function to apply
+     * @return the list of strings resulting from applying the function to each string in the
+     * original list
+     */
+    public static List<String> transformedList(List<String> words, Function<String, String> function) {
+        List<String> result = new ArrayList<>();
+        for (String str : words) {
+            result.add(function.apply(str));
         }
         return result;
     }
