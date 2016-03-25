@@ -39,4 +39,19 @@ public class StringUtils {
             return s1;
         } else return s2;
     }
+
+    /**
+     * A method that compares two elements and returns the 'better' element, better
+     * being defined by the test entered as a parameter.
+     *
+     * @param e1 the first element to compare
+     * @param e2 the second element to compare
+     * @param test the test condition that determines what 'better' means
+     * @return the 'better' element
+     */
+    public static <T> T betterElement(T e1, T e2, TwoElementPredicate<T> test) {
+        if (test.isBetter(e1, e2)) {
+            return e1;
+        } else return e2;
+    }
 }
