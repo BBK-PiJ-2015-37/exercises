@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Class created to contact static method required for Ex2 - Ex5 and Ex7
+ * Class created to contact static method required for Ex2 - Ex7
  */
 public class StringUtils {
 
@@ -71,6 +71,24 @@ public class StringUtils {
     public static List<String> allMatches(List<String> words, Predicate<String> function) {
         List<String> result = new ArrayList<>();
         for (String possibleMatch : words) {
+            if (function.test(possibleMatch)) {
+                result.add(possibleMatch);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * A method that takes a list of elements and returns a list of elements taken from
+     * the original list that pass a given test condition
+     *
+     * @param elements a list of elements
+     * @param function the test condition
+     * @return the list of elements that pass the test condition
+     */
+    public static <T> List<T> elementAllMatches(List<T> elements, Predicate<T> function) {
+        List<T> result = new ArrayList<>();
+        for (T possibleMatch : elements) {
             if (function.test(possibleMatch)) {
                 result.add(possibleMatch);
             }
