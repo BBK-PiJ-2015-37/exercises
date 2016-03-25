@@ -3,6 +3,8 @@ package day19;
 /**
  * A functional interface created for Ex3
  */
+
+@FunctionalInterface
 public interface TwoStringPredicate {
 
     /**
@@ -10,7 +12,8 @@ public interface TwoStringPredicate {
      *
      * @param s1 the first String object to compare
      * @param s2 the second String object to compare
-     * @return the 'better' string (better is determined by the lambda used)
+     * @return true if s1 is the 'better' string (better is determined by the lambda
+     * used), false otherwise
      */
     boolean isBetter(String s1, String s2);
 }
