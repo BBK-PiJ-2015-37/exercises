@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Class created to contact static method required for Ex2 - Ex7
+ * Class created to contact static method required for Ex2 - Ex8
  */
 public class StringUtils {
 
@@ -109,6 +109,23 @@ public class StringUtils {
         List<String> result = new ArrayList<>();
         for (String str : words) {
             result.add(function.apply(str));
+        }
+        return result;
+    }
+
+    /**
+     * A method that takes a list of elements, applies a function to each element of the list,
+     * and returns a new list with the resultant elements
+     *
+     * @param elements a list of elements
+     * @param function the function to apply
+     * @return the list of elements resulting from applying the function to each element in the
+     * original list
+     */
+    public static <T, R> List<R> elementTransformedList(List<T> elements, Function<T, R> function) {
+        List<R> result = new ArrayList<>();
+        for (T e : elements) {
+            result.add(function.apply(e));
         }
         return result;
     }
