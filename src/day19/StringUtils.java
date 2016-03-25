@@ -1,7 +1,11 @@
 package day19;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
 /**
- * Class created to contact static method required for Ex2 and Ex3.
+ * Class created to contact static method required for Ex2 - Ex5.
  */
 public class StringUtils {
 
@@ -53,5 +57,23 @@ public class StringUtils {
         if (test.isBetter(e1, e2)) {
             return e1;
         } else return e2;
+    }
+
+    /**
+     * A method that takes a list of strings and returns a list of strings taken from
+     * the original list that pass a given test condition
+     *
+     * @param words a list of strings
+     * @param function the test condition
+     * @return the list of strings that pass the test condition
+     */
+    public static List<String> allMatches(List<String> words, Predicate<String> function) {
+        List<String> result = new ArrayList<>();
+        for (String possibleMatch : words) {
+            if (function.test(possibleMatch)) {
+                result.add(possibleMatch);
+            }
+        }
+        return result;
     }
 }
