@@ -1,1 +1,1 @@
-# exercises
+# Repository for weekly PiJ exercises
